@@ -63,7 +63,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-l", "20", NULL };
 static const char *appcmd[] = {"/home/lee/.local/bin/dmenu_apps.sh", NULL };
 static const char *termcmd[]  = { "st", NULL };
-
+static const char *lockcmd[] = { "slock", NULL };
 static const char *browsercmd[] = { "brave", NULL };
 
 static const Key keys[] = {
@@ -108,6 +108,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+   { MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lockcmd } },
 };
 
 /* button definitions */
